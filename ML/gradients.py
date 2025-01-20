@@ -1,4 +1,5 @@
 import numpy as np
+import ML.prediction_functions
 
 def gradientLinearRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
 
@@ -32,7 +33,7 @@ def gradientLinearRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"
     return dj_dw, dj_db
 
 
-def gradientLinearRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
+def gradientLogisticRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
 
     '''
     X --> (m x n)
@@ -47,7 +48,7 @@ def gradientLinearRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"
     dj_dw = np.zeros((no_of_features, 1)) #gradient of cost function wrt w (weights)
     dj_db = 0 #gradient of cost function wrt b (bias)
 
-    err = (np.matmul(X, w) + b) - y 
+    err = ML.prediction_functions.sigmoid(np.matmul(X, w) + b) - y 
 
     dj_dw_tmp = np.sum(X*err, axis=0) 
     dj_dw = dj_dw_tmp.T
