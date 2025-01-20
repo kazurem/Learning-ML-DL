@@ -7,8 +7,6 @@ import time
 import ML.models
 plt.style.use("seaborn-v0_8")
 
-
-
 # df = pd.read_csv("./data/data.csv")
 
 # X_train = np.array(df['x']).reshape(-1, 1)
