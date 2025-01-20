@@ -1,36 +1,30 @@
 import numpy as np
-import functions
 
-def MeanSquaredError(X: np.ndarray, y: np.ndarray, W: np.ndarray, b: np.float64, prediction_function=functions.linear, regul: bool=False, lambda_: np.float64=1.0) -> np.float64:
-    no_of_examples: int = X.shape[0]
 
-    total_cost: np.float64 = 0
-    reg_cost:   np.float64 = 0 #regularization cost
+def costLinearRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
+    '''
+    X --> (m x n)
+    y --> (m x 1)
+    W --> (n x 1)
+    b --> int/float...
+    '''
 
-    total_cost = np.square((prediction_function(X, W, b)) - y)
+    total_cost = 0
+    regul_cost = 0 #regularization cost
 
-    if regul == True:
-        reg_cost   = (np.sum(W, axis=0))**2
-        reg_cost   = (lambda_/(2*no_of_examples)) * reg_cost
-
-    return total_cost + reg_cost   
-
-def BinaryCrossEntropy(X: np.ndarray, y:np.ndarray, W: np.ndarray, b: np.ndarray, function=functions.sigmoid, regul=False, lambda_=1) -> np.float64:
-    no_of_examples: int = X.shape[0]
-
-    total_cost: np.float64 = 0
-    reg_cost:   np.float64 = 0 #regularization cost
-
-    sigmod_value: np.ndarray = function(functions.linear(X, W, b))
-    total_cost = -y*np.log(sigmod_value) - (1-y)*np.log(1-sigmod_value)
-    total_cost = np.sum(total_cost, axis=0)
+    no_of_examples = X.shape[0]
+    total_cost = (np.matmul(X, w) + b) - y #calculate losses for all examples
+    total_cost = np.square(total_cost)     #calculate the square of those losses
+    total_cost = np.sum(total_cost)        #sum all the squared losses
+    total_cost = total_cost/(2*no_of_examples) #get the total cost
 
     if regul == True:
-        reg_cost   = (np.sum(W, axis=0))**2
-        reg_cost   = (lambda_/(2*no_of_examples)) * reg_cost
+        if regul_type == "l2":
+            regul_cost = np.sum(np.square(w))
+            regul_cost = (regul_cost) * (lambda_/(2*no_of_examples))
+        elif regul_type == "l1":
+            regul_cost = np.sum(np.abs(w))
+            regul_cost = (regul_cost) * (lambda_/(2*no_of_examples))
 
-    return total_cost + reg_cost
-    
-
-
+    return total_cost + regul_cost
 
