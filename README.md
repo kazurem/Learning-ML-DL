@@ -21,7 +21,7 @@ A respository I am making in order to learn ML and DL.
     xi.     PCA (Not Done) <br>
 
 2. Creating a neural network from scratch  (In progress. Can't seem to get the size of matrices right.)
-3. Basic DL projects using TensorFlow
+3. Basic DL projects using TensorFlow <br>
     i.   MNIST multiclass and binary classification (Done) <br>
     ii.  Linear regression using NN (Done) <br>
     iii. Binary Classification using NN (Done) <br>
