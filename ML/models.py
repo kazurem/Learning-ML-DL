@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import ML.gradients
 import ML.costs
-from utils import timer
+from utils.utils import timer
 
 
 '''
