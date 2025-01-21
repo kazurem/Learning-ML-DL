@@ -8,22 +8,22 @@ A respository I am making in order to learn ML and DL.
 
 ### Progress:
 1. Recreating famous ML algorithms:
-    i.      Linear Regression using Gradient Descent (Done)
-    ii.     Losgistic Regression for Binary Classification (Done)
-    iii.    SVM (Not Done)
-    iv.     Naive Bayes (Not Done)
-    v.      Decision Trees (Not Done)
-    vi.     Gradient Boosting (Not Done)
-    vii.    Random Forest (Not Done)
-    viii.   XGBoost (Not Done)
-    ix.     DBSCAN (Not Done)
-    x.      K-means Clustering (Not Done)
-    xi.     PCA (Not Done)
+    i.      Linear Regression using Gradient Descent (Done) <br>
+    ii.     Losgistic Regression for Binary Classification (Done) <br>
+    iii.    SVM (Not Done) <br>
+    iv.     Naive Bayes (Not Done) <br>
+    v.      Decision Trees (Not Done) <br>
+    vi.     Gradient Boosting (Not Done) <br>
+    vii.    Random Forest (Not Done) <br>
+    viii.   XGBoost (Not Done) <br>
+    ix.     DBSCAN (Not Done) <br>
+    x.      K-means Clustering (Not Done) <br>
+    xi.     PCA (Not Done) <br>
 
 2. Creating a neural network from scratch  (In progress. Can't seem to get the size of matrices right.)
 3. Basic DL projects using TensorFlow
-    i.   MNIST multiclass and binary classification (Done)
-    ii.  Linear regression using NN (Done)
-    iii. Binary Classification using NN (Done)
+    i.   MNIST multiclass and binary classification (Done) <br>
+    ii.  Linear regression using NN (Done) <br>
+    iii. Binary Classification using NN (Done) <br>
 
 
