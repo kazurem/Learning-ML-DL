@@ -1,7 +1,7 @@
 import numpy as np
 import ML.prediction_functions
 
-def gradientLinearRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
+def gradientMeanSquaredError(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
 
     '''
     X --> (m x n)
@@ -33,7 +33,9 @@ def gradientLinearRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"
     return dj_dw, dj_db
 
 
-def gradientLogisticRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
+
+
+def gradientBinaryCrossEntropy(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
 
     '''
     X --> (m x n)

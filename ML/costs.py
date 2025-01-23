@@ -2,7 +2,7 @@ import numpy as np
 import ML.prediction_functions
 
 
-def costLinearRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
+def MeanSquaredError(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
     '''
     X --> (m x n)
     y --> (m x 1)
@@ -31,7 +31,7 @@ def costLinearRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
 
 
 
-def costLogisticRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
+def BinaryCrossEntropy(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
 
     total_cost = 0
     regul_cost = 0
@@ -52,3 +52,7 @@ def costLogisticRegression(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
             regul_cost = (regul_cost) * (lambda_/(2*no_of_examples))
 
     return total_cost + regul_cost
+
+
+def SparseCategoricalEntropy(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
+    pass
