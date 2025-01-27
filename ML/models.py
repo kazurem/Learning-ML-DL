@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import ML.gradients
 from ML.costs import MeanSquaredError, BinaryCrossEntropy
 from utils.utils import timer
+from collections import Counter
 
 
 '''
@@ -180,6 +181,31 @@ class LogisticRegressor:
     def predict(self, X):
         return (np.matmul(X, self.weights) + self.bias)
 
+
+
+class KNN:
+
+    def __init__(self, no_of_neighbors=10):
+        self.X = np.nan
+        self.y = np.nan
+        self.no_of_neighbors = no_of_neighbors
+
+    def fit(self, X, y):
+        self.X = X
+        self.y = y
+
+    def predict(self, X):
+        prediction = np.empty(X.shape[0], dtype=str)
+        for i in range(X.shape[0]):
+            distance = np.sqrt(np.sum((np.square(self.X - X[i])), axis=1))
+            distance = (np.vstack((distance, self.y))).T
+            distance = (distance[distance[:, 0].argsort()])[:self.no_of_neighbors]
+            voting = Counter(distance[:, 1])
+            prediction[i] = (voting.most_common(1))[0][0]
+
+        return prediction
+    
+    
 
 
 class SoftmaxRegressor:

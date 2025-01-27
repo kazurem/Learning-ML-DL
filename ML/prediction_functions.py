@@ -8,3 +8,8 @@ def linear(X, w, b, all_examples=False):
     
 def sigmoid(z):
     return 1 / (1 + np.exp(-z))
+
+def softmax(z):
+    softmaxed = np.exp(z)
+    softmaxed = softmaxed/np.sum(softmaxed)
+    return softmaxed

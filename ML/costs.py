@@ -54,5 +54,7 @@ def BinaryCrossEntropy(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
     return total_cost + regul_cost
 
 
-def SparseCategoricalEntropy(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
-    pass
+def SparseCrossCategoricalEntropy(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
+    logit = ML.prediction_functions.linear(X, w, b, all_examples=True)
+    softmaxed = ML.prediction_functions.softmax(logit)
+    loss = -np.log(softmaxed)
