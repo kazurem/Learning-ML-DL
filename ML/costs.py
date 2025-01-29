@@ -54,6 +54,16 @@ def BinaryCrossEntropy(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
     return total_cost + regul_cost
 
 
+def distortion(X, closest_centroids, centroids, K):
+    m = X.shape[0]
+    cost = 0
+    for i in range(K):
+        grouped_points = X[closest_centroids.reshape(m) == i, :]
+        if grouped_points.size > 0:
+            cost += np.sum(np.sum(np.square(grouped_points - centroids[i]), axis=1))
+    return cost/m
+
+
 def SparseCrossCategoricalEntropy(X, y, w, b, regul=False, lambda_=1, regul_type="l2"):
     logit = ML.prediction_functions.linear(X, w, b, all_examples=True)
     softmaxed = ML.prediction_functions.softmax(logit)
