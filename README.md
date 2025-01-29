@@ -7,9 +7,9 @@ A respository I am making in order to learn ML and DL.
 3. Basic DL projects using TensorFlow
 
 ### Progress:
-1. Recreating famous ML algorithms:
+1. Recreating famous ML algorithms: <br>
     i.      Linear Regression using Gradient Descent (Done) <br>
-    ii.     Losgistic Regression for Binary Classification (Done) <br>
+    ii.     Logistic Regression for Binary Classification (Done) <br>
     iii.    SVM (Not Done) <br>
     iv.     Naive Bayes (Not Done) <br>
     v.      Decision Trees (Not Done) <br>
@@ -17,8 +17,9 @@ A respository I am making in order to learn ML and DL.
     vii.    Random Forest (Not Done) <br>
     viii.   XGBoost (Not Done) <br>
     ix.     DBSCAN (Not Done) <br>
-    x.      K-means Clustering (Not Done) <br>
+    x.      K-means Clustering (Done) <br>
     xi.     PCA (Not Done) <br>
+    xii.    Anomaly Detection usin Gaussian Distribution (Done)
 
 2. Creating a neural network from scratch  (In progress. Can't seem to get the size of matrices right.)
 3. Basic DL projects using TensorFlow <br>
