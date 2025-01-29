@@ -1,0 +1,1 @@
+strawberry image: [strawberry image](https://purepng.com/photo/29022/food-red-juicy-strawberry)

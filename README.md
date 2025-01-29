@@ -28,3 +28,7 @@ A respository I am making in order to learn ML and DL.
     iii. Binary Classification using NN (Done) <br>
 
 
+<br><br>
+
+### Credits: <br>
+I am following ML specialization course by Andrew Ng's

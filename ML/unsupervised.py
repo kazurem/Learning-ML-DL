@@ -66,7 +66,7 @@ class KMeans:
         return centroids
     
     
-    def fit(self, X, max_iters=10, max_tries=10):
+    def fit(self, X, max_iters=10, max_tries=10, verbose=False):
         '''
         X --> (m, n)
         
@@ -77,7 +77,7 @@ class KMeans:
         m, n = X.shape
 
         costs = np.zeros(max_tries)
-        closest_centroids_arr = np.zeros((max_tries, m))
+        closest_centroids_arr = np.zeros((max_tries, m), dtype=int)
         init_centroids_arr = np.zeros((max_tries, self.K, n))
 
         for try_ in range(max_tries):
@@ -91,13 +91,13 @@ class KMeans:
             init_centroids_arr[try_] = init_centroids
             costs[try_] = distortion(X, closest_centroids, init_centroids, self.K)
 
+            if verbose == True:
+                print(f"Tries: {try_+1}/{max_tries}")
+
         # choose the best configuration 
         best = np.argmin(costs)
-        best_closest_centroids = closest_centroids_arr[best]
+        best_closest_centroids = (closest_centroids_arr[best])
         best_init_centroids = init_centroids_arr[best]
-
-        print(costs)
-        print(costs[best])
 
         return best_init_centroids, best_closest_centroids
         
